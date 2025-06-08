@@ -59,7 +59,7 @@ const Navbar = () => {
                 <Users className="h-5 w-5 text-white" />
               </div>
               <span className="text-2xl font-bold text-white tracking-tight group-hover:scale-105 transition-transform duration-300">
-                Alumni Connect
+                Bridge Batch
               </span>
             </div>
           </div>
