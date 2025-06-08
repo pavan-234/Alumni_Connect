@@ -1,33 +1,3 @@
-// import React from 'react';
-
-// const AlumniHome = () => {
-//   return (
-//     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 sm:px-6 lg:px-8">
-//       <div className="max-w-md w-full bg-white shadow-lg rounded-lg p-8 text-center transform transition-all duration-500 ease-in-out opacity-100 animate-fade-in">
-//         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-//           Welcome to the Alumni Dashboard
-//         </h1>
-//         <p className="text-lg text-gray-600">
-//           Select an option from the navigation bar to get started.
-//         </p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AlumniHome;
-
-
-
-
-
-
-
-
-
-
-
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Briefcase, UserPlus, MessageCircle, ArrowRight, Search, Handshake, Edit } from 'lucide-react'; // Added relevant icons
