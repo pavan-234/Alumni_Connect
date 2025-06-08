@@ -19,7 +19,7 @@ import {
 
 export default function Register() {
   const [formData, setFormData] = useState({
-    role: "",
+    role: "student",
     fullName: "",
     gender: "",
     passoutYear: "",
