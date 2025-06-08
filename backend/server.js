@@ -22,10 +22,21 @@ app.use(express.json());
 // Middleware to parse cookies
 app.use(cookieParser());
 
-// CORS setup to allow requests from frontend (e.g. Vite dev server)
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://alumni-connect-jvmr.vercel.app'
+];
+
 app.use(cors({
-  origin: 'http://localhost:5173', // change as per your frontend URL
-  credentials: true,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
 }));
 
 // Mount API routes
