@@ -25,7 +25,7 @@ app.use(cookieParser());
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://alumni-connect-jvmr.vercel.app'
+  'https://bridgebatch.vercel.app'
 ];
 
 app.use(cors({
