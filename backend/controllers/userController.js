@@ -5,9 +5,16 @@ const jwt = require('jsonwebtoken');
 const signup = async (req, res) => {
   try {
     const { role, fullName, gender, passoutYear, email, password, collegeName, ...otherFields } = req.body;
+// Reject admin role explicitly
+if (role?.toLowerCase() === 'admin') {
+  return res.status(403).json({ message: 'Cannot sign up as admin' });
+}
 
-    if (role === 'admin') return res.status(403).json({ message: 'Cannot sign up as admin' });
-    if (!['student', 'alumni'].includes(role)) return res.status(400).json({ message: 'Invalid role' });
+// Allow only 'student' and 'alumni' roles
+if (!['student', 'alumni'].includes(role?.toLowerCase())) {
+  return res.status(400).json({ message: 'Invalid role. Only "student" or "alumni" are allowed.' });
+}
+
 
     if (!fullName || !gender || !passoutYear || !email || !password || !collegeName) {
       return res.status(400).json({ message: 'Missing required fields' });
