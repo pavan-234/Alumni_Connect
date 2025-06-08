@@ -242,7 +242,7 @@ const AlumniChat = () => {
       try {
         setError(prev => ({ ...prev, contacts: '' }));
         setLoading((prev) => ({ ...prev, contacts: true }));
-        const res = await fetch('http://localhost:5000/api/search/students', { 
+        const res = await fetch('https://alumni-connect-six.vercel.app/api/search/students', { 
           headers: { Authorization: `Bearer ${alumniToken}` },
         });
         if (!res.ok) throw new Error(`Fetch students failed: ${res.statusText} (${res.status})`);
@@ -266,7 +266,7 @@ const AlumniChat = () => {
     try {
       setError(prev => ({ ...prev, messages: '' }));
       setLoading((prev) => ({ ...prev, messages: true }));
-      const res = await fetch(`http://localhost:5000/api/messages/${currentReceiver._id}`, {
+      const res = await fetch(`https://alumni-connect-six.vercel.app/api/messages/${currentReceiver._id}`, {
         headers: { Authorization: `Bearer ${alumniToken}` },
       });
       if (!res.ok) throw new Error(`Load messages failed: ${res.statusText} (${res.status})`);
@@ -309,7 +309,7 @@ const AlumniChat = () => {
         try {
             setError(prev => ({ ...prev, sending: '' }));
             setLoading((prev) => ({ ...prev, sending: true }));
-            const res = await fetch('http://localhost:5000/api/messages', {
+            const res = await fetch('https://alumni-connect-six.vercel.app/api/messages', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${alumniToken}` },
                 body: JSON.stringify({ receiverId: currentReceiver._id, content, type: 'text' }),
@@ -350,7 +350,7 @@ const AlumniChat = () => {
 
   //   try {
   //       setError(prev => ({ ...prev, file: '' })); setLoading(prev => ({ ...prev, file: true }));
-  //       const res = await fetch('http://localhost:5000/api/messages/upload', {
+  //       const res = await fetch('https://alumni-connect-six.vercel.app/api/messages/upload', {
   //           method: 'POST', headers: { Authorization: `Bearer ${alumniToken}` }, body: formData,
   //       });
   //       if (!res.ok) throw new Error(`File upload failed: ${res.statusText} (${res.status})`);
@@ -620,7 +620,7 @@ export default AlumniChat;
 //       try {
 //         setError(prev => ({ ...prev, contacts: '' }));
 //         setLoading((prev) => ({ ...prev, contacts: true }));
-//         const res = await fetch('http://localhost:5000/api/search/students', { 
+//         const res = await fetch('https://alumni-connect-six.vercel.app/api/search/students', { 
 //           headers: { Authorization: `Bearer ${alumniToken}` },
 //         });
 //         if (!res.ok) throw new Error(`Fetch students failed: ${res.statusText} (${res.status})`);
@@ -644,7 +644,7 @@ export default AlumniChat;
 //     try {
 //       setError(prev => ({ ...prev, messages: '' }));
 //       setLoading((prev) => ({ ...prev, messages: true }));
-//       const res = await fetch(`http://localhost:5000/api/messages/${currentReceiver._id}`, {
+//       const res = await fetch(`https://alumni-connect-six.vercel.app/api/messages/${currentReceiver._id}`, {
 //         headers: { Authorization: `Bearer ${alumniToken}` },
 //       });
 //       if (!res.ok) throw new Error(`Load messages failed: ${res.statusText} (${res.status})`);
@@ -703,7 +703,7 @@ export default AlumniChat;
 //         try {
 //             setError(prev => ({ ...prev, sending: '' }));
 //             setLoading((prev) => ({ ...prev, sending: true }));
-//             const res = await fetch('http://localhost:5000/api/messages', {
+//             const res = await fetch('https://alumni-connect-six.vercel.app/api/messages', {
 //                 method: 'POST',
 //                 headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${alumniToken}` },
 //                 body: JSON.stringify({ receiverId: currentReceiver._id, content: textContentFromInput.trim(), type: 'text' }),
@@ -758,7 +758,7 @@ export default AlumniChat;
 
 //     try {
 //         setError(prev => ({ ...prev, file: '' })); setLoading(prev => ({ ...prev, file: true }));
-//         const res = await fetch('http://localhost:5000/api/messages/upload', {
+//         const res = await fetch('https://alumni-connect-six.vercel.app/api/messages/upload', {
 //             method: 'POST', headers: { Authorization: `Bearer ${alumniToken}` }, body: formData,
 //         });
 //         if (!res.ok) {

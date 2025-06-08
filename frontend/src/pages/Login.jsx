@@ -98,7 +98,7 @@ const Login = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post('http://localhost:5000/api/users/login', {
+      const res = await axios.post('https://alumni-connect-six.vercel.app/api/users/login', {
         role: formData.role,
         email: formData.email,
         password: formData.password,

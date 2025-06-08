@@ -90,7 +90,7 @@ const Mentorship = () => {
     }
     try {
       setIsLoadingAlumni(true); setError('');
-      const res = await axios.get('http://localhost:5000/api/search/alumni', { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.get('https://alumni-connect-six.vercel.app/api/search/alumni', { headers: { Authorization: `Bearer ${token}` } });
       if (Array.isArray(res.data)) setAllAlumni(res.data);
       else throw new Error("Invalid alumni data format.");
     } catch (err) {
@@ -107,7 +107,7 @@ const Mentorship = () => {
     }
     try {
       setIsLoadingRequests(true); setError('');
-      const res = await axios.get('http://localhost:5000/api/mentorship', { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.get('https://alumni-connect-six.vercel.app/api/mentorship', { headers: { Authorization: `Bearer ${token}` } });
       if (Array.isArray(res.data)) {
         const validRequests = res.data.filter(req => req.alumni && typeof req.alumni === 'object' && req.alumni._id);
         // No complex sorting needed here as we only use this list to check status on alumni cards
@@ -141,7 +141,7 @@ const Mentorship = () => {
     if (!token) { setError('Authentication required.'); return; }
     try {
       setIsSendingRequest(true); setError(''); // Set global sending state
-      await axios.post('http://localhost:5000/api/mentorship', { alumniId: alumnus._id }, {
+      await axios.post('https://alumni-connect-six.vercel.app/api/mentorship', { alumniId: alumnus._id }, {
         headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
       });
       fetchMyRequests(); // Refresh statuses

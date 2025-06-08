@@ -306,7 +306,7 @@ const SearchAlumni = () => {
       setError('');
       const token = getToken();
       
-      const res = await fetch('http://localhost:5000/api/search/alumni', {
+      const res = await fetch('https://alumni-connect-six.vercel.app/api/search/alumni', {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
       });

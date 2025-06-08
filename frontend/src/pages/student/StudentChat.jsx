@@ -302,7 +302,7 @@ const StudentChat = () => {
       try {
         setError(prev => ({ ...prev, alumni: '' }));
         setLoading((prev) => ({ ...prev, alumni: true }));
-        const res = await fetch('http://localhost:5000/api/search/alumni', {
+        const res = await fetch('https://alumni-connect-six.vercel.app/api/search/alumni', {
           headers: { Authorization: `Bearer ${studentToken}` },
         });
         if (!res.ok) throw new Error(`Fetch alumni failed: ${res.statusText} (${res.status})`);
@@ -326,7 +326,7 @@ const StudentChat = () => {
     try {
       setError(prev => ({ ...prev, messages: '' }));
       setLoading((prev) => ({ ...prev, messages: true }));
-      const res = await fetch(`http://localhost:5000/api/messages/${currentReceiver._id}`, {
+      const res = await fetch(`https://alumni-connect-six.vercel.app/api/messages/${currentReceiver._id}`, {
         headers: { Authorization: `Bearer ${studentToken}` },
       });
       if (!res.ok) throw new Error(`Load messages failed: ${res.statusText} (${res.status})`);
@@ -360,7 +360,7 @@ const StudentChat = () => {
     try {
         setError(prev => ({ ...prev, sending: '' }));
         setLoading((prev) => ({ ...prev, sending: true }));
-        const res = await fetch('http://localhost:5000/api/messages', {
+        const res = await fetch('https://alumni-connect-six.vercel.app/api/messages', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${studentToken}` },
             body: JSON.stringify({ receiverId: currentReceiver._id, content, type: 'text' }),

@@ -138,7 +138,7 @@ const Jobs = () => {
       if (!token) {
         throw new Error('Authentication token not found. Please log in.');
       }
-      const res = await fetch('http://localhost:5000/api/jobs', {
+      const res = await fetch('https://alumni-connect-six.vercel.app/api/jobs', {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
       });

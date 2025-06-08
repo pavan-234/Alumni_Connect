@@ -40,7 +40,7 @@
 
         try {
         setLoading((prev) => ({ ...prev, login: true }));
-        const res = await axios.post('http://localhost:5000/api/users/login', {
+        const res = await axios.post('https://alumni-connect-six.vercel.app/api/users/login', {
             email,
             password,
             role: 'admin',
@@ -63,7 +63,7 @@
         try {
         setLoading((prev) => ({ ...prev, users: true }));
         setError('');
-        const res = await axios.get('http://localhost:5000/api/users/admin/dashboard', {
+        const res = await axios.get('https://alumni-connect-six.vercel.app/api/users/admin/dashboard', {
             headers: {
             Authorization: `Bearer ${token}`,
             },
@@ -87,7 +87,7 @@
         setError('');
         setSuccess('');
         const token = localStorage.getItem('admin_token');
-        await axios.post(`http://localhost:5000/api/users/approve/${userId}`, {}, {
+        await axios.post(`https://alumni-connect-six.vercel.app/api/users/approve/${userId}`, {}, {
             headers: {
             Authorization: `Bearer ${token}`,
             },

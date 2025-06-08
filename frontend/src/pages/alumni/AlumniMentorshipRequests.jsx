@@ -161,7 +161,7 @@ const AlumniMentorshipRequests = () => {
     }
     try {
       setLoadingPage(true); setError(''); setSuccess('');
-      const res = await axios.get("http://localhost:5000/api/mentorship", {
+      const res = await axios.get("https://alumni-connect-six.vercel.app/api/mentorship", {
         headers: { Authorization: `Bearer ${alumniToken}` },
       });
       
@@ -196,7 +196,7 @@ const AlumniMentorshipRequests = () => {
     if (!alumniToken) { setError('Authentication required.'); return; }
     try {
       setUpdatingRequestId(requestId); setError(''); setSuccess('');
-      const res = await axios.put("http://localhost:5000/api/mentorship", 
+      const res = await axios.put("https://alumni-connect-six.vercel.app/api/mentorship", 
         { requestId, status },
         { headers: { "Content-Type": "application/json", Authorization: `Bearer ${alumniToken}` } }
       );

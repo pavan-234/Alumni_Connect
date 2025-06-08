@@ -137,7 +137,7 @@ const StudentUpdateProfile = () => {
         const token = getToken();
         // if (!token) { navigate('/login'); return; }
 
-        const res = await axios.get('http://localhost:5000/api/users/profile', {
+        const res = await axios.get('https://alumni-connect-six.vercel.app/api/users/profile', {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = res.data || {};
@@ -246,7 +246,7 @@ const StudentUpdateProfile = () => {
       };
 
       await axios.put(
-        'http://localhost:5000/api/users/profile',
+        'https://alumni-connect-six.vercel.app/api/users/profile',
         payloadToSubmit, 
         {
           headers: {
