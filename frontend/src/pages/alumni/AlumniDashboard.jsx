@@ -110,14 +110,15 @@ const AlumniDashboard = () => {
 
   // Navigation links specific to Alumni Dashboard
   const navLinks = [
-    { label: 'Home', to: '/alumni-dashboard', icon: Home },
-    { label: 'Post Job', to: '/alumni-dashboard/post-job', icon: Briefcase },
-    { label: 'Search Students', to: '/alumni-dashboard/search-students', icon: Search }, // Changed icon
-    { label: 'Mentorship Desk', to: '/alumni-dashboard/mentorship-requests', icon: Handshake },
-    { label: 'Chat', to: '/alumni-dashboard/chat', icon: MessageCircleMore }, // Differentiated icon
-    { label: 'My Profile', to: '/alumni-dashboard/profile', icon: UserCircle },
-    { label: 'Update Profile', to: '/alumni-dashboard/updateprofile', icon: Pencil },
-  ];
+  { label: 'Home', to: '/alumni-dashboard', icon: Home },
+  { label: 'My Profile', to: '/alumni-dashboard/profile', icon: UserCircle },
+  { label: 'Update Profile', to: '/alumni-dashboard/updateprofile', icon: Pencil },
+  { label: 'Search Students', to: '/alumni-dashboard/search-students', icon: Search },
+  { label: 'Mentorship Desk', to: '/alumni-dashboard/mentorship-requests', icon: Handshake },
+  { label: 'Post Job', to: '/alumni-dashboard/post-job', icon: Briefcase },
+  { label: 'Chat', to: '/alumni-dashboard/chat', icon: MessageCircleMore },
+];
+
 
   return (
     // Applied StudentDashboard's overall page styling

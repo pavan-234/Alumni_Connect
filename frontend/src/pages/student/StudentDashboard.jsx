@@ -41,14 +41,15 @@ const StudentDashboard = () => {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   const navLinks = [
-    { label: 'Home', to: '/student-dashboard', icon: Home },
-    { label: 'Jobs', to: '/student-dashboard/jobs', icon: Briefcase },
-    { label: 'Mentorship', to: '/student-dashboard/mentorship', icon: UserCheck },
-    { label: 'Chat', to: '/student-dashboard/chat', icon: MessageSquare },
-    { label: 'Search Alumni', to: '/student-dashboard/search-alumni', icon: Search },
-    { label: 'View Profile', to: '/student-dashboard/profile', icon: UserCircle },
-    { label: 'Update Profile', to: '/student-dashboard/updateprofile', icon: Pencil },
-  ];
+  { label: 'Home', to: '/student-dashboard', icon: Home },
+  { label: 'View Profile', to: '/student-dashboard/profile', icon: UserCircle },
+  { label: 'Update Profile', to: '/student-dashboard/updateprofile', icon: Pencil },
+  { label: 'Search Alumni', to: '/student-dashboard/search-alumni', icon: Search },
+  { label: 'Mentorship', to: '/student-dashboard/mentorship', icon: UserCheck },
+  { label: 'Jobs', to: '/student-dashboard/jobs', icon: Briefcase },
+  { label: 'Chat', to: '/student-dashboard/chat', icon: MessageSquare },
+];
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-950 text-white font-sans">
